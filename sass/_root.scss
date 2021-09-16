@@ -1,0 +1,291 @@
+/*  RESET Default Styles */
+
+//Brown Bold
+@font-face {
+    font-family: "Brown Bold";
+    src: url("/font/Brown-Bold/Brown\ Bold.ttf") 
+    format("truetype")
+}
+
+//Brown Regular
+@font-face {
+    font-family: "Brown Regular";
+    src: url("/font/Brown-Bold/Brown\ Regular.ttf") 
+    format("truetype")
+}
+
+//geomanist-regular
+@font-face {
+    font-family: "Geomanist Regular";
+    src: url("/font/Geomanist/Geomanist\ Regular.ttf") 
+    format("truetype")
+}
+
+//Geomanist Medium
+@font-face {
+    font-family: "Geomanist Medium";
+    src: url("/font/Geomanist/Geomanist\ Medium.ttf") 
+    format("truetype")
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: $text-dark;
+    font-family: "Geomanist Regular";
+    background-color: $white-100;
+    position: relative;
+
+    @include respond-to-screen-size-by-max($md) {
+      font-size: 16px;
+    }
+
+    @include respond-to-screen-size-by-min(1600px) {
+      font-size: 20px;
+    }
+
+    @include respond-to-screen-size-by-min(1900px) {
+      font-size: 22px;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Brown Bold';
+}
+
+h2 {
+
+  font-size: 36px;
+  font-family: 'Brown Bold';
+  margin-bottom: 30px;
+  filter: drop-shadow(-4px 4px 4px $text-shadow);
+
+  @include respond-to-screen-size-by-max($sm) {
+    font-size: 30px;
+    text-align: center;
+  }
+   
+  br {
+    @include respond-to-screen-size-by-min($sm) {
+      display: none;
+    }
+  }
+}
+
+dl, ol, ul {
+    margin-bottom: 0;
+}
+
+strong {
+    font-family: 'Brown Bold';
+}
+
+a {
+  color: #FFF;
+}
+
+.btn {
+  background-color: $blue;
+  border: 1px solid $blue;
+  border-radius: 12px;
+  padding: 7px 25px;
+  margin-bottom: 20px;
+  min-height: 40px;
+  color: #FFF;
+  font-family: "Brown Regular";
+  &:focus{
+    @include filled_btn_hover_shadow;
+  }
+
+  &:hover {
+      color: #FFF;
+      @include btn_shadow; 
+      a {
+        color: #FFF;
+      }
+  }
+
+  &.btn-outlined {
+    background-color: transparent;
+    border: 1px solid $blue;
+    border-radius: 12px;
+    padding: 5px 15px;
+    width: 120px;
+    max-width: 120px;
+    margin-bottom: 20px;
+    color: $blue;
+    &:focus {
+      @include  outline_btn_hover_shadow
+    }
+  }
+
+}
+
+/* Start Loading page */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $blue-100;
+    z-index: 99999;
+  }
+  .loading-circle, .snipper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 10px solid;
+    border-radius: 50%;;
+    z-index: 99999;
+  }
+  
+  .loading-circle {
+  
+    border-color: #FFF
+  }
+  .snipper {
+    border-color: transparent;
+    border-left-color: $blue;
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite 
+  }
+  
+  @keyframes rotation {
+  
+    0% {
+      transform:  rotateZ(0);
+    }
+  
+    25% {
+      transform: rotateZ(90deg);
+  
+    }
+  
+    50% {
+      transform: rotateZ(180deg);
+  
+    }
+  
+    75% {
+      transform: rotateZ(270deg);
+  
+    }
+  
+    100% {
+      transform: rotateZ(360deg)
+    }
+  }
+  /* End Loading page */
+
+  /*navigation-bullets*/
+  .navigation-bullets {
+    display: flex;
+    flex-flow: column nowrap;
+    position: fixed;
+    right: 30px;
+    top: 30%;
+    overflow: visible;
+    padding: 15px;
+    z-index: 9999;
+    @include respond-to-screen-size-by-max($lg) {
+      display: none;
+    }
+    
+    a {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid $icon;
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all .1s linear;
+    padding: 2px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:hover, &.active {
+      transform: scale(2);
+      border-color: $blue;
+      background-color: $blue;
+      transition: all .1s ease-in;
+    }
+  }
+  }
+  /*navigation-bullets*/
+
+.container {
+
+  //change padding to principal page
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+
+    @include respond-to-screen-size-by-min(576px) {
+      max-width: 620px !important;
+    }
+
+
+    @include respond-to-screen-size-by-min(768px) {
+      max-width: 720px !important;
+    }
+
+
+    @include respond-to-screen-size-by-min(992px) {
+      max-width: 960px !important;
+    }
+    
+    @include respond-to-screen-size-by-min(1024px) {
+        max-width: 992px !important;
+    }
+
+    @include respond-to-screen-size-by-min(1200px) {
+        max-width: 1170px !important;
+    }
+
+    @include respond-to-screen-size-by-min(1300px) {
+        max-width: 1270px !important;
+    }
+
+    @include respond-to-screen-size-by-min(1600px) {
+        max-width: 1550px !important;
+    }
+
+    @include respond-to-screen-size-by-min(1900px) {
+        max-width: 1750px !important;
+    }
+
+
+}

@@ -1,0 +1,457 @@
+/*Start Header*/
+#header {
+  padding: 25px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  @include respond-to-screen-size-by-max($md) {
+    // height: 100%;
+  }
+
+  .navbar{
+    position: relative;
+    padding: 0;
+    @include respond-to-screen-size-by-max($lg) {
+      justify-content: center;
+      position: static;
+    }
+
+
+    .item_icon {
+      width: 19px;
+      height: 20px;
+      margin-right: 15px;
+    }
+
+    .item_text {
+      font-family: 'Brown Bold';
+      color: $text-dark;
+      font-size: 15px;
+      @include respond-to-screen-size-by-min(1600px) {
+        font-size: 18px;
+      }
+    }
+
+    /**** NEW ****/
+    .navbar_top {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row;
+      width: 100%;
+      .btn {
+        @include respond-to-screen-size-by-max($lg) {
+          display: none;
+        }
+      }
+
+      .navbar_top_links {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include respond-to-screen-size-by-max($lg) {
+          width: 100%;
+        }
+        @include respond-to-screen-size-by-max($sm) {
+          margin-bottom: 0;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          margin-right: 30px;
+
+          .user_img{
+            width: 35px;
+            margin-right: 10px;
+          }
+
+          .user_name {
+            color: $text-gray;
+            text-decoration: underline;
+            font-size: 16px;
+            @include respond-to-screen-size-by-max($lg) {
+              display: none !important;
+            }
+          }
+        }
+
+        .social-links {
+          display: flex;
+          align-items: center;
+          padding: 5px 15px;
+          background-color: $blue-100;
+          border-radius: 12px;
+          border-top: 1px solid rgba(255,255,255,.7);
+          height: 40px;
+          @include tab_links_shadow;
+
+          @include respond-to-screen-size-by-max($lg) {
+            display: none !important;
+          }
+
+          .link {
+            margin-right: 15px;
+            cursor: pointer;
+            a {
+              color: $icon;
+              &:hover {
+                color: $blue;
+              }
+            }
+          }
+
+          .link:last-of-type {
+              margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .navbar_bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+    }
+    /**** NEW ****/
+
+    .logo {
+      width: 200px;
+      @include respond-to-screen-size-by-max($lg) {
+          order: 2;
+          margin: auto;
+      }
+    }
+
+    > .logo {
+      @include respond-to-screen-size-by-min(1025px) {
+        position: absolute;
+        right: 50%;
+        margin-right: -100px;
+      }
+    }
+
+    .menu_toggler {
+      background-color: $blue-100;
+      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      @include mobile_menu_shadow;
+      &:not(.close) {
+        @include respond-to-screen-size-by-min(1025px) {
+          display: none;
+        }
+      }
+
+      position: relative;
+      span {
+        position: absolute;
+        content: '';
+        height: 3px;
+        border-radius: 8px;
+        background-color: #bbd0e8;
+        top: 30%;
+        right: 8px;
+        left: 8px;
+        transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        &:nth-of-type(2) {
+          top: 50%;
+        }
+        &:nth-of-type(3) {
+          top: 71%;
+        }
+      }
+
+      &.close {
+        // position: absolute;
+        // top: -7px;
+        // right: -18px;
+      }
+
+      &.close span{
+        top: 50%;
+        transform: rotate(45deg);
+        &:not(:first-of-type) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    
+    .navbar_bottom_links {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 20px;
+      background-color: $blue-100;
+      border-radius: 15px;
+      border-top: 1px solid rgba(255,255,255,.7);
+      // max-width: 320px;
+      @include tab_links_shadow;
+      @include respond-to-screen-size-by-max($lg) {
+        padding: 0;
+        display: none;
+      }
+      &:hover  > .navbar_desktop_menu {
+        display: block;
+        z-index: 1000;
+      }
+
+      .navbar_item {
+        display: flex;
+        margin-right: 15px;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          .item_text {
+            color: $blue;
+          }
+        }
+      }
+
+      .navbar_item:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    // Start navbar Menu
+    .navbar_desktop_menu {
+      position: absolute;
+      top: 100%;
+      bottom: auto;
+      right: 0;
+      left: 0;
+      margin-top: -45px;
+      z-index: 100;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      display: none;
+      // z-index: -10;
+      background-color: $white-100;
+      @include tab_menu_shadow;
+      @include respond-to-screen-size-by-max($lg) {
+        position: fixed;
+        height: 100vh;
+        overflow-y: scroll;
+        margin-top: 0;
+        top: 0;
+        border-radius: 0;
+        background-color: $blue-100;
+        padding: 25px 32px;
+      }
+
+      &.collapsed {
+        display: block;
+        // opacity: 1;
+        transition: all .3s linear;
+        z-index: 9999;
+      }
+
+      .menu_toggler, .btn, .contact_info{
+        @include respond-to-screen-size-by-min(1025px) {
+          display: none;
+        }
+      }
+
+      .navbar_menu_title {
+        display: flex;
+        align-items: center;
+      } 
+
+      .navbar_menu_list {
+        
+        .item {
+          margin-bottom: 15px;
+          a {
+            font-size: 16px;
+            color: $text-gray;
+            &:hover {color: $blue;}
+          }
+        }
+      }
+
+      .logo {
+        @include respond-to-screen-size-by-min(1024px) {
+          display: block;
+        }
+      }
+      .row {
+        position: relative;
+        &::before{
+          position: absolute;
+          content: '';
+          height: 1px;
+          left: 0;
+          right: 57%;
+          top: 50px;
+          background-color: $blue-100;
+          z-index: -1;
+          @include respond-to-screen-size-by-max($lg) {
+            display: none;
+          }
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          height: 1px;
+          right: 0;
+          left: 57%;
+          top: 50px;
+          background-color: $blue-100;
+          z-index: -1;
+          @include respond-to-screen-size-by-max($lg) {
+            display: none;
+          }
+        }
+      }
+      .navbar_menu_title {
+        &:hover {
+          .item_text {color: $blue;}
+        }
+      }
+      .row .col-12:nth-of-type(3){
+        @include respond-to-screen-size-by-max($lg) {
+          order: 4;
+        }
+        .navbar_menu_title {
+          .item_icon {
+            background-image: url(/img/formation-sm.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &:hover {
+            .item_icon {
+              background-image: url(/img/formation-sm-hover.svg);
+            }
+          }
+        }
+      }
+
+      .row .col-12:nth-of-type(4){
+        @include respond-to-screen-size-by-max($lg) {
+          order: 5;
+        }
+        .navbar_menu_title {
+          .item_icon {
+            background-image: url(/img/Nos-Enseignants-sm.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &:hover {
+            .item_icon {
+              background-image: url(/img/Nos-Enseignants-sm-hover.svg);
+            }
+          }
+        }
+      }
+
+      .row .col-12:nth-of-type(5){
+        @include respond-to-screen-size-by-max($lg) {
+          order: 3;
+        }
+        .navbar_menu_title {
+          .item_icon {
+            background-image: url(/img/formation-sm.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &:hover {
+            .item_icon {
+              background-image: url(/img/formation-sm-hover.svg);
+            }
+          }
+        }
+      }
+
+      .row .col-12:nth-of-type(6){
+        @include respond-to-screen-size-by-max($lg) {
+          order: 6;
+        }
+        .navbar_menu_title {
+          .item_icon {
+            background-image: url(/img/Nos-Enseignants-sm.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &:hover {
+            .item_icon {
+              background-image: url(/img/Nos-Enseignants-sm-hover.svg);
+            }
+          }
+        }
+      }
+
+      .row .col-12:nth-of-type(7){
+        @include respond-to-screen-size-by-max($lg) {
+          order: 7;
+        }
+
+        .navbar_menu_title {
+          .item_icon {
+            background-image: url(/img/Enterprise-sm.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &:hover {
+            .item_icon {
+              background-image: url(/img/Enterprise-sm-hover.svg);
+            }
+          }
+        }
+      }
+
+      .row .col-12:nth-of-type(8){
+        @include respond-to-screen-size-by-max($lg) {
+          order: 8;
+        }
+      }
+
+      .row .col-12 {
+        @include respond-to-screen-size-by-max($lg) {
+          margin: 0 0 30px 0;
+        }
+        .navbar_menu_list {
+          @include respond-to-screen-size-by-max($lg) {
+            margin-bottom: 0;
+            padding-left: 30px;
+          }
+        }
+      }
+
+      .logo {
+        width: 150px;
+      }
+
+      .contact_info ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include respond-to-screen-size-by-min(375px) {
+          justify-content: start;
+          flex-direction: column;
+        }
+      }
+
+      .contact_info  li {
+        padding: 5px 15px;
+        background-color: $blue-100;
+        border-radius: 12px;
+        border-top: 1px solid rgba(255,255,255,.7);
+        height: 40px;
+        line-height: 30px;
+        margin-bottom: 30px;
+        max-width: 275px;
+        flex-grow: 1;
+        @include mobile_menu_shadow;
+        a {color: $text-dark}
+        i {margin-right: 2rem; color: $blue;}
+      }
+
+      .contact_info img {
+        max-width: 170px;
+      }
+    }
+  }
+}
+/*End Header*/

@@ -1,0 +1,216 @@
+/* Start Footer */
+#footer {
+  background-color: $blue-900;
+  background: url(/img/footer-bg-2.png);
+  background-size: 100% 100%;
+  padding: 120px 0 35px;
+  position: relative;
+
+  // Footer background on iPad pro
+  @include respond-to-screen-size-by-max(1024px) {
+    background: url(/img/footer-md.png);
+    background-size: 100% 100%;
+  }
+
+  // Footer background on iPad
+  @include respond-to-screen-size-by-max(768px) {
+    background: url(/img/footer-sm.png);
+    background-size: 100% 100%;
+  }
+
+  // Footer background on mobile devices
+  @include respond-to-screen-size-by-max(420px) {
+    background: url(/img/footer-mobile.png);
+    background-size: cover;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: $blue-100;
+    z-index: -1;
+  }
+  .footer_content .row .col-12:first-of-type {
+    @include respond-to-screen-size-by-max($md) {
+      order: 2;
+    }
+  }
+
+  .footer_content_links{
+    h6 {
+      color: #FFF;
+      font-family: "Brown Regular";
+      font-size: 16px;
+      @include respond-to-screen-size-by-max($md) {
+      }
+    }
+
+    ul {
+
+      a {
+        font-size: 14px;
+        color: $link;
+        @include respond-to-screen-size-by-max($md) {
+        }
+      }
+    }
+
+    .col-6 {
+      @include respond-to-screen-size-by-max($md) {
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+
+  .footer_call_to_action {
+    text-align: right;
+    @include respond-to-screen-size-by-max($md) {
+      text-align: center;
+      padding: 0 5rem;
+      margin-bottom: 30px;
+    }
+    p {
+      color: #FFF;
+      font-family: "Brown Bold";
+      font-size: 18px;
+      @include respond-to-screen-size-by-max($sm) {
+      }
+    }
+
+    .btn {
+      &:hover {
+        @include footer_btn_shadow;
+      }
+    }
+    
+    .btn a {
+      color: $blue-500;
+      @include respond-to-screen-size-by-max($sm) {
+        color: #FFF;
+      }
+    }
+  }
+
+  .footer_copyright {
+    padding: 75px 0 0;
+    @include respond-to-screen-size-by-max($md) {
+      padding: 35px 0 0;
+    }
+    .contact_info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include respond-to-screen-size-by-max($md) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @include respond-to-screen-size-by-max(392px) {
+        justify-content: center;
+      }
+
+      li:first-of-type {
+        @include respond-to-screen-size-by-max(392px) {
+          margin-bottom: 15px;
+        }
+      }
+      @include respond-to-screen-size-by-max($md) {
+        padding: 10px 20px;
+        margin: 20px auto;
+        border-radius: 13px;
+        background-color: $blue-900;
+        @include footer_contact_shadow;
+
+        li {
+          display: flex;
+          align-items: center;
+          @include respond-to-screen-size-by-max($sm) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      li:last-of-type {
+        @include respond-to-screen-size-by-max($md) {
+          margin-right: 0;
+        }
+      }
+
+      i {
+        margin-right: 10px;
+        color: $blue;
+      }
+    }
+
+
+    .social-links {
+      display: flex;
+      justify-content: space-between;
+      @include respond-to-screen-size-by-max($md) {
+        width: 300px;
+        height: 65px;
+        margin: auto;
+      }
+    }
+
+    i {
+      font-size: 18px;
+      color: #bbd0e8;
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    li {
+      color: #FFF;
+      font-size: 14px;
+      margin-right: 15px;
+      a {
+        color: #FFF;
+      }
+    }
+
+    .terms_links {
+      display: flex;
+      justify-content: flex-end;
+
+      @include respond-to-screen-size-by-min($lg) {
+        // margin-top: 20px;
+      }
+
+      @include respond-to-screen-size-by-max($md) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      li {
+        @include respond-to-screen-size-by-max($md) {
+          width: 50%;
+          text-align: center;
+          margin-right: 0;
+          &:first-of-type, &:nth-of-type(2) {
+            margin-bottom: 15px;
+          }
+        }
+        
+      }
+
+      a {
+        @include respond-to-screen-size-by-max($md) {
+          color: $link;
+        }
+      }
+    }
+  }
+  
+}
+/* End Footer */

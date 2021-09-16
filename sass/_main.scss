@@ -1,0 +1,1381 @@
+/****************************************** HOME PAGE ******************************************/
+#hero {
+  // padding: 270px 0 75px;
+  padding: 220px 0 20px;
+  background-image: url(/img/hero-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -60px;
+  overflow: hidden;
+  @include respond-to-screen-size-by-max($lg) {
+    padding:300px 0 240px;
+    // background-position-x: 50%;
+  }
+
+  @include respond-to-screen-size-by-max($sm) {
+    padding-bottom: 140px;
+    background-position-x: 50%;
+  }
+
+  .hero_content {
+    @include respond-to-screen-size-by-max($lg) {
+      padding-right: 10rem;
+    }
+
+    @include respond-to-screen-size-by-max($sm) {
+      padding-right: 0;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    @include respond-to-screen-size-by-max($lg) {
+      text-align: left;
+    }
+  }
+
+  .hero_illustration {
+
+    @include respond-to-screen-size-by-max($sm) {
+      padding: 130px 0;
+    }
+
+    @include respond-to-screen-size-by-max($xs) {
+      padding: 100px 0;
+    }
+
+    img {
+      transform: scale(1.2);
+      @include respond-to-screen-size-by-max($sm) {
+        transform: scale(2.2);
+      }
+    }
+  }
+
+  .row div:first-of-type{
+    @include respond-to-screen-size-by-max($lg) {
+      order: 2;
+    }
+  }
+}
+
+#services {
+  padding: 60px 0 120px;
+
+  h2 {
+    text-align: center;
+    margin: 0 0 75px;
+  }
+
+  .services_item {
+    background-color: $white-100;
+    height: 100%;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 70px;
+    @include bevel_emboss_shadow; 
+    @include respond-to-screen-size-by-max($xl) {
+      width: 280px;
+      height: 280px;
+      margin: auto;
+    }
+
+    @include respond-to-screen-size-by-max($lg) {
+      width: 350px;
+      height: 350px;
+      margin: auto;
+    }
+
+    @include respond-to-screen-size-by-max($md) {
+      width: 280px;
+      height: 280px;
+      margin: auto;
+    }
+
+    @include respond-to-screen-size-by-max($sm) {
+      width: 270px;
+      height: 270px;
+      margin: auto;
+    }
+
+    @include respond-to-screen-size-by-max($xs) {
+      width: 315px;
+      height: 315px;
+      margin: auto;
+    }
+
+    .service_img {
+      height: 160px;
+      min-height: 160px;
+    }
+
+    .service_info {
+
+      h4.service_name {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+
+      .service_details {
+        opacity: 0;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+    &:hover {
+      .service_details {
+        opacity: 1;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+
+  .row .col-12:nth-child(1) .services_item .service_img{
+    width: 95px;
+    height: 160px;
+  }
+
+  .row .col-12:nth-child(2) .services_item .service_img{
+    line-height: 160px;
+  }
+
+  .row .col-12:nth-child(3) .services_item .service_img{
+    width: 180px;
+    height: 140px;
+  }
+
+  
+  .row .col-12:not(:last-of-type) {
+    @include respond-to-screen-size-by-max($lg) {
+      margin-bottom: 60px;
+    }
+
+    @include respond-to-screen-size-by-max($md) {
+      margin-bottom: 30px;
+    }
+
+  }
+
+}
+
+#form {
+  background: url(/img/form-bg.png);
+  background-size: cover;
+  padding:  240px 0;
+  text-align: center;
+  position: relative;
+
+  h2 br {
+    @include respond-to-screen-size-by-max($sm) {
+      display: none;
+    }
+  }
+
+  p {
+    width: 50%;
+    margin: 40px auto 0;
+    @include respond-to-screen-size-by-max($md) {
+      width: 90%;
+      margin-bottom: 40px;
+    }
+
+    @include respond-to-screen-size-by-max($sm) {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+
+  p:nth-of-type(2) {
+    width: 60%;
+    @include respond-to-screen-size-by-max($md) {
+      width: 100%;
+    }
+
+  } 
+
+  p:nth-of-type(3) {
+    margin-top: 20px;
+    width: 75%;
+    font-size: 17px;
+    @include respond-to-screen-size-by-max($md) {
+      width: 100%;
+    }
+  }
+
+  form {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 0;
+
+    .input_width {
+      @include tab_links_shadow;
+      border-radius: 18px; 
+    }
+
+    div.text {
+      margin-bottom: 30px;
+    }
+
+    div.email {
+      @include respond-to-screen-size-by-max($sm) {
+        margin-bottom: 30px;
+      }
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid $blue-100;
+      padding: 12px 20px 12px 40px;
+      background-color: $blue-100;
+      border-radius: 18px;
+      color: $blue;
+      font-size: 18px;
+      font-family: 'Brown Regular';
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=tel] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    input:focus {
+      border: 1px solid $blue;
+      background-color: #FFF;
+      color: $blue;
+    }
+
+    input::placeholder,
+    input::-webkit-input-placeholder {
+      color: $text-dark;
+      font-family: 'Brown Regular';
+      font-size: 15px;
+    }
+  }
+
+  .btn {
+    margin: 40px auto 0;
+    padding: 5px 20px;
+    @include btn_shadow;
+    @include respond-to-screen-size-by-max($sm) {
+      padding: 12px 20px 12px 40px;
+      width: 100%;
+    }
+  }
+  
+  .butterfly-1 {
+    position: absolute;
+    width: 100px;
+    top: -20px;
+    right: 30%;
+    z-index: 100;
+    @include respond-to-screen-size-by-max($sm) {
+      display: none;
+    }
+  }
+
+  .butterfly-2 {
+    position: absolute;
+    width: 100px;
+    top: 20%;
+    left: 20%;
+    z-index: 100;
+    @include respond-to-screen-size-by-max($md) {
+      left: 5%;
+    }
+
+    @include respond-to-screen-size-by-max($sm) {
+      display: none;
+    }
+  }
+
+  .butterfly-3 {
+    position: absolute;
+    width: 100px;
+    top: 55%;
+    right: 17%;
+    z-index: 100;
+    @include respond-to-screen-size-by-max($md) {
+      right: 5%;
+    }
+
+    @include respond-to-screen-size-by-max($sm) {
+      top: 4%;
+    }
+  }
+}
+
+#offer, #offer-2 {
+  padding: 120px 0;
+  position: relative;
+  @include respond-to-screen-size-by-max($md) {
+    padding: 60px 0 120px;
+  }
+
+  @include respond-to-screen-size-by-max($sm) {
+    padding: 60px 0;
+  }
+
+  h2 {
+    @include respond-to-screen-size-by-max($md) {
+      font-size: 30px;
+    }
+    @include respond-to-screen-size-by-max($sm) {
+      font-size: 36px;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -205px;
+    left: 0;
+    right: 0;
+    height: 205px;
+    background-color: $blue-100;
+    z-index: -1;
+    // display: none;
+    @include respond-to-screen-size-by-min($lg) {
+      top: -305px;
+      height: 305px; 
+    }
+    
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $blue;
+    background: url(/img/offer-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 10;
+    @include respond-to-screen-size-by-max($xl) {
+      display: none;
+    }
+  }
+  .row {
+    align-items: center;
+    margin-top: -80px;
+    @include respond-to-screen-size-by-max($xl) {
+      margin-top: 0;
+    }
+
+    @include respond-to-screen-size-by-max($xs) {
+      margin-top: -240px;
+    }
+
+    div {
+      z-index: 11;
+    }
+
+    .col-12:first-of-type {
+      @include respond-to-screen-size-by-max($sm) {
+        order: 2;
+      }
+    }
+  }
+
+  .offer_info {
+    text-align: right;
+    padding-top: 100px;
+    @include respond-to-screen-size-by-max($sm) {
+      padding-top: 30px;
+      text-align: left;
+    }
+  }
+
+  .offer_illustration {
+    width: 420px;
+    margin: auto;
+    @include respond-to-screen-size-by-max($md) {
+      width: auto;
+    }
+  }
+}
+
+#help {
+  background-color: $blue-100;
+  padding: 120px 0;
+
+  .help_header {
+    h2 {
+      text-align: center;
+      @include respond-to-screen-size-by-max($sm) {
+        text-align: left;
+      }
+    }
+
+    p {
+      background-color: $blue-100;
+      margin-top: 40px;
+      border: 1px solid $blue-100;
+      text-align: center;
+      padding: 1rem 10rem;
+      border-radius: 18px;
+      @include tab_links_shadow;
+      @include respond-to-screen-size-by-max($md) {
+        padding: 0;
+        box-shadow: none;
+        border: none
+      }
+
+      @include respond-to-screen-size-by-max($sm) {
+        padding: 0;
+        text-align: left;
+        box-shadow: none;
+        border: none
+      }
+    }
+  }
+
+  .row {
+    justify-content: space-between;
+    @include respond-to-screen-size-by-max($xs) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+  }
+
+  .help_card {
+    margin-top: 60px;
+    padding-left: 0;
+    padding-right: 0;
+    flex-basis: 45%;
+    @include respond-to-screen-size-by-min($xs) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &:first-of-type {
+      
+      @include respond-to-screen-size-by-min($md) {
+        margin-right: 2.5%;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @include respond-to-screen-size-by-min($md) {
+        margin-left: 2.5%;
+      }
+
+      @include respond-to-screen-size-by-min($sm) {
+        // margin-left: 0;
+      }
+    }
+
+    @include respond-to-screen-size-by-max($md) {
+      flex-basis: 100%;
+      // margin-left: -15px !important;
+      // margin-right: 0 !important;
+    }
+
+    a {
+      color: $blue;
+    }
+
+    .btn {
+      background-color: transparent;
+      @include btn_shadow;
+      @include respond-to-screen-size-by-max($xs) {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .card_img {
+    margin-bottom: 30px;
+    .sm {
+      @include respond-to-screen-size-by-min($xs) {
+        display: block !important;
+      }
+    }
+    .xs {
+      // transform: scale(1.2);
+      margin: 30px 0;
+      @include respond-to-screen-size-by-min($xs) {
+        display: none;
+        
+      }
+    }
+  }
+
+  .card_info {
+    margin-bottom: 30px;
+    @include respond-to-screen-size-by-max($xs) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+/****************************************** HOME PAGE ******************************************/
+
+/****************************************** PRINCIPAL PAGE ******************************************/
+.principal_hero {
+  // position: relative;
+  background-image: none !important;
+  background-color: $blue-100;
+  padding-bottom: 35px !important;
+  overflow: visible !important;
+  @include respond-to-screen-size-by-max($sm) {
+    background-image: url(/img/hero-bg.png) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding:300px 0 240px !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+  }
+  
+  .hero_image {
+    margin-left: -30px;
+    // @include hero_img_shadow; 
+    border-bottom-right-radius: 75px;
+    @include respond-to-screen-size-by-max(1200px) {
+      border-bottom-right-radius: 113px;
+      margin-bottom: 80px;
+      max-width: 750px;
+    }
+
+    @include respond-to-screen-size-by-max($lg) {
+      border-bottom-right-radius: 85px;
+      margin-bottom: 80px;
+    }
+    @include respond-to-screen-size-by-max($sm) {
+      border-bottom-right-radius: 52px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .offset-left {
+    margin-left: 20px;
+    @include respond-to-screen-size-by-max($sm) {
+      margin-left: 0;
+    }
+  }
+
+  .row div:first-of-type {order: 0 !important;}
+}
+
+#about {
+  padding: 160px 0;
+  position: relative;
+  @include respond-to-screen-size-by-max($xs) {
+    padding-top: 0;
+  }
+
+  .container {
+    max-width: 100% !important;
+  }
+  
+  .about_image {
+    margin-right: -30px;
+    border-bottom-left-radius: 75px;
+    @include respond-to-screen-size-by-max(1200px) {
+      margin-bottom: 80px;
+    }
+
+    @include respond-to-screen-size-by-max($lg) {
+      margin-bottom: 80px;
+    }
+
+  }
+
+  .about_content {
+    @include respond-to-screen-size-by-max($lg) {
+      padding-right: 10rem;
+    }
+
+    @include respond-to-screen-size-by-min($sm) {
+      margin-left: 20px;;
+    }
+   
+    @include respond-to-screen-size-by-max($sm) {
+      padding-right: 0;
+      margin-left: 0;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    
+  }
+
+  .offset-left {
+    margin-left: 8.333333%;
+    @include respond-to-screen-size-by-max(1200px) {
+      margin-left: 0 !important;
+    }
+  }
+
+  .offset-right {
+    margin-right: 8.333333%;
+    @include respond-to-screen-size-by-max(1200px) {
+      margin-right: 0;
+    }
+  }
+
+  .row div:first-of-type {
+    @include respond-to-screen-size-by-max($lg) {
+      order: 2 !important;
+    }
+  }
+  .row div:nth-of-type(2) {
+    @include respond-to-screen-size-by-max($lg) {
+      // padding-left: 30px;
+    }
+  }
+  .feather-1 {
+    position: absolute;
+    width: 100px;
+    top: -20px;
+    right: 15%;
+    z-index: 100;
+    @include respond-to-screen-size-by-max($sm) {
+      display: none;
+    }
+  }
+
+  .feather-2 {
+    position: absolute;
+    width: 100px;
+    top: 160px;
+    right: 30%;
+    z-index: 100;
+    @include respond-to-screen-size-by-max($sm) {
+      display: none;
+    }
+  }
+}
+
+.principal_offer {
+  padding: 120px 0 240px !important;
+  position: relative;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    background-image: url(/img/principal-offer-bg.png) !important;
+    top: 0 !important;
+  }
+
+  h2 {
+    @include respond-to-screen-size-by-max($lg) {
+      text-align: center;
+    }
+  }
+
+  .row {
+    margin-top: -160px !important;
+    div:nth-of-type(2) {
+      @include respond-to-screen-size-by-max($lg) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .sub-1 {
+    font-size: 17px;
+  }
+
+  .sub-2 {
+    font-size: 18px;
+    color: $blue;
+    @include respond-to-screen-size-by-max($lg) {
+      font-family: "Geomanist Medium";
+    }
+  }
+
+  .sub-3 {
+    font-size: 14px;
+    color: $text-gray;
+    text-align: center;
+    margin-top: 30px;
+    a {
+      color: $blue;
+    }
+    @include respond-to-screen-size-by-max($lg) {
+      display: none;
+    }
+  }
+
+  .btn {
+    margin-top: 30px;
+    @include respond-to-screen-size-by-max($lg) {
+      display: none;
+    }
+  }
+
+  .butterfly-3 {
+    position: absolute;
+    width: 100px;
+    top: -100px;
+    left: 17%;
+    z-index: 100;
+    @include respond-to-screen-size-by-max($sm) {
+     display: none;
+    }
+  }
+}
+
+.principal_services {
+  padding: 240px 0 0px !important;
+  background-image: url(/img/principal-services-bg.png);
+  background-size: cover;
+  position: relative;
+  @include respond-to-screen-size-by-max($lg) {
+    background-image: url(/img/principal-services-bg.png);
+    background-position-x: -35rem;
+    padding: 240px 0 120px !important;
+  }
+
+  @include respond-to-screen-size-by-max($sm) {
+    background-image: url(/img/principal-services-sm-bg.png);
+    // background-size: 100% 100%;
+    background-position-x: initial;
+  }
+
+  .services_item {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    height: auto !important;
+  }
+
+  .row .col-12:nth-child(1) .services_item {
+    &:hover .service_img {background-image: url(/img/principal-service-1-hover.png);}
+    .service_img{
+      width: 100% !important;
+      background-image: url(/img/principal-service-1.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+  }
+  
+
+  .row .col-12:nth-child(2) .services_item {
+    &:hover .service_img {background-image: url(/img/principal-service-2-hover.png);}
+    .service_img{
+      width: 100% !important;
+      background-image: url(/img/principal-service-2.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+  }
+  
+
+  .row .col-12:nth-child(3) .services_item {
+    &:hover .service_img {background-image: url(/img/principal-service-3-hover.png);}
+    .service_img{
+      width: 100% !important;
+      background-image: url(/img/principal-service-3.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+  }
+  
+
+  .row .col-12:nth-child(4) .services_item {
+    &:hover .service_img {background-image: url(/img/principal-service-4-hover.png);}
+    .service_img{
+      width: 100% !important;
+      background-image: url(/img/principal-service-4.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+  }
+  
+  .row .col-12:nth-child(3) .services_item .service_name{
+    // margin-top: 0 !important;
+  }
+
+  .books {
+    width: 300px;
+    position: absolute;
+    top: -50px;
+    right: 50%;
+    margin-right: -150px;
+    @include respond-to-screen-size-by-max($lg) {
+      top: -60px;
+    }
+    
+  }
+}
+
+#solution {
+  padding: 120px 0;
+  text-align: center;
+
+  h2  {
+    @include respond-to-screen-size-by-max($lg) {
+      text-align: center;
+    }
+  }
+  
+  p {
+    margin: auto;
+    &:first-of-type {
+      @include respond-to-screen-size-by-max($lg) {
+        margin-bottom: 25px;
+      }
+    }
+    &:nth-of-type(2) {
+      @include respond-to-screen-size-by-max($lg) {
+        margin-bottom: 25px;
+      }
+    }
+    &:nth-of-type(3) {
+      @include respond-to-screen-size-by-max($lg) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .sub-1 {
+    font-size: 16px;
+    padding: 0 7rem;
+    margin-top: 30px;
+    @include respond-to-screen-size-by-max($sm) {
+      padding:  0;
+      text-align: left;
+    }
+  }
+
+}
+
+#training {
+  padding: 520px 0 590px;
+  text-align: center;
+  position: relative;
+  @include respond-to-screen-size-by-max($lg) {
+    padding: 240px 0;
+  }
+  @include respond-to-screen-size-by-max($md) {
+    padding: 120px 0 240px;
+  }
+  @include respond-to-screen-size-by-max($sm) {
+    padding: 120px 0;
+  }
+  @include respond-to-screen-size-by-min(1200px) {
+    // padding: 400px 0 600px;
+    padding: 200px 0;
+  }
+
+  @include respond-to-screen-size-by-min(1300px) {
+    padding: 405px 0 550px;
+  }
+
+  @include respond-to-screen-size-by-min(1400px) {
+    padding: 520px 0 590px;
+  }
+  // Very large screens only
+  @include respond-to-screen-size-by-min(1700px) {
+    padding: 585px 0 750px;
+  }
+  @include respond-to-screen-size-by-min(1900px) {
+    padding: 690px 0 870px;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/training-bg.png);
+    background-size: cover;
+    z-index: -1;
+    background-position-y: -50px;
+    background-repeat: no-repeat;
+    @include respond-to-screen-size-by-max(1300px) {
+      display: none;
+    }
+  } 
+
+  h2 {
+    margin-top: -120px;
+    @include respond-to-screen-size-by-max($lg) {
+      margin-top: 0;
+      text-align: center;
+    }
+    br{
+      @include respond-to-screen-size-by-min($lg) {
+        display: none;
+      }
+    }
+  }
+
+  .training_box {
+    position: relative;
+    padding: 2rem 2rem;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    &:hover {
+      z-index: 10 !important;
+      h3 {
+        position: relative;
+        color: #FFF;
+        right: auto;
+      }
+
+      h3::after {
+        background-color: #FFF;
+        right: 50%;
+        width: 40px;
+        margin-right: -20px;
+      }
+      p {
+        display: block;
+      }
+
+      .training_btn {display: block;}
+    }
+    @include respond-to-screen-size-by-max($lg) {
+      width: 250px;
+      height: 250px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 60px;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+
+    h3 {
+      font-family: "Geomanist Regular";
+      color: rgba(255,255,255,.5);
+      font-size: 25px;
+      position: absolute;
+      right: 30px;
+      @include respond-to-screen-size-by-max($lg) {
+        font-size: 20px;
+        right: 82px;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        right: 100%;
+        height: 3.5px;
+        width: 10px;
+        border-radius: 50px;
+        margin-right: -10px;
+        background-color: rgba(255,255,255,.5);
+      }
+    }
+
+    .training_btn {display: none;}
+
+    p {
+      font-size: 15px; 
+      display: none;
+      color: #FFF;
+      margin-top: 20px;
+      @include respond-to-screen-size-by-max($lg) {
+        font-size: 12px;
+      }
+    }
+
+    &.active {
+
+      h3{
+        color: #FFF;
+        position: relative !important;
+        font-size: 30px;
+        right: 0;
+        @include respond-to-screen-size-by-max($lg) {
+          font-size: 25px;
+        }
+      }
+
+      h3::after {
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        right: 50%;
+        height: 3.5px;
+        width: 40px;
+        border-radius: 50px;
+        margin-right: -20px;
+        background-color: #FFF;
+      }
+
+      p {
+        color: #FFF;
+        margin-top: 20px;
+        display: block;
+      }
+    }
+
+    .training_btn {
+      position: absolute;
+      bottom: -20px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      padding: 10px;
+      border: none;
+      a{
+        color: #FFF; 
+        font-family: "Geomanist Medium";
+        letter-spacing: 1px;
+      }
+    }
+
+
+  }
+
+  .row {
+    max-width: 650px;
+    margin: auto;
+    margin-top: 120px;
+    .col-12:first-of-type {
+      margin-left: -60px;
+      @include respond-to-screen-size-by-max($lg) {
+        margin-left: 0;
+      }
+    }
+    @include respond-to-screen-size-by-max($lg) {
+      max-width: auto;
+    }
+  }
+
+  .row .col-12:first-of-type {
+    @include respond-to-screen-size-by-max($lg) {
+      margin-bottom: 120px;
+    }
+    .training_box {
+      z-index: 10;
+      &::after {
+        background: linear-gradient(80deg, #8285ff 0%, #012ca4 70%);
+        @include training_box_1_shadow;
+      }
+
+      .training_btn {
+        background-color: #456ef5;  
+        @include training_btn_1_shadow;
+      }
+    }
+  } 
+  
+  .row .col-12:nth-of-type(2) {
+    @include respond-to-screen-size-by-max($lg) {
+      margin-bottom: 120px;
+    }
+    .training_box {
+      z-index: 9;
+      &::after {
+        background: linear-gradient(80deg, #ff5079 0%, #ad0031 70%);
+        @include training_box_2_shadow;
+      }
+
+      .training_btn {
+        background-color: #ff5079;
+        @include training_btn_2_shadow;
+      }
+    }
+  } 
+  
+
+  .row .col-12:nth-of-type(3) .training_box {
+    z-index: 8;
+    &::after {
+      background: linear-gradient(80deg, #ffee65 0%, #ff8227 70%);
+      @include training_box_3_shadow;
+    }
+
+    .training_btn {
+      background-color: #ff8227;
+      @include training_btn_3_shadow;
+    }
+  }
+
+}
+
+.principal_offer_2 {
+  padding: 240px 0 !important;
+  background: url(/img/principal-offer-2-bg_2.png) !important;
+  background-size: cover !important;
+  @include respond-to-screen-size-by-max($lg) {
+    padding: 300px 0 120px !important;
+  }
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    background-image: url(/img/principal-offer-2-bg.png) !important;
+    top: 100px !important;
+  }
+
+  .row {
+    padding: 0 6rem;
+    // margin-top: -160px !important;
+    @include respond-to-screen-size-by-max($xl) {
+      padding: 0;
+    }
+    div:first-of-type {
+      @include respond-to-screen-size-by-max($lg) {
+        order: 0 !important;
+      }
+    }
+  }
+  .offer_info {
+    text-align: left !important;
+    padding-top: 200px !important;
+    @include respond-to-screen-size-by-max($lg) {
+      text-align: center !important;
+      padding-top: 50px !important;
+    }
+    p a {
+      color: $blue;
+    }
+  }
+
+  h2  {
+    @include respond-to-screen-size-by-max($lg) {
+      text-align: center;
+    }
+    br {
+      @include respond-to-screen-size-by-min($lg) {
+        display: block !important;
+      }
+    }
+  }
+
+  p {
+    font-size: 17px !important;
+    @include respond-to-screen-size-by-max($lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .offer_illustration {
+    @include respond-to-screen-size-by-max($lg) {
+      width: auto !important;
+    }
+    img:first-of-type {
+      @include respond-to-screen-size-by-max(1023px) {
+        display: none;
+      }
+    }
+    img:nth-of-type(2) {
+      @include respond-to-screen-size-by-min($lg) {
+        display: none !important;
+      }
+    }
+  }
+}
+
+/****************************************** PRINCIPAL PAGE ******************************************/
+
+
+/****************************************** ABOUT US PAGE ******************************************/
+.about-us_hero {
+  background-image: none !important;
+  background-color: $blue-100;
+  overflow: visible !important;
+  padding-top: 200px !important;
+  @include respond-to-screen-size-by-max($lg) {
+    padding-bottom: 0px !important;
+  }
+
+  .row div:first-of-type {
+    order: 0 !important;
+  }
+
+  .hero_image {
+    margin-bottom: -150px;
+    position: relative;
+    @include respond-to-screen-size-by-max($lg) {
+      margin-bottom: 100px;
+    }
+  }
+
+  .hero_content {
+    h2 {
+      @include respond-to-screen-size-by-max($lg) {
+        text-align: center;
+      }
+    }
+    
+    p:first-of-type {
+      @include respond-to-screen-size-by-max($lg) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .page-navigation {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    @include respond-to-screen-size-by-max($lg) {
+      display: none;
+    }
+    span a {
+      font-size: 16px;
+      color: #acb6ca;
+    }
+
+    a.active {color: $blue;}
+  }
+}
+
+#finance {
+  padding: 220px 0 30px;
+  
+  @include respond-to-screen-size-by-max($lg) {
+    background-image: url(/img/hero-bg.png) !important;
+    background-position-x: 50%;
+    background-size: cover;
+    padding-top: 0;
+    padding-bottom: 160px;
+  }
+}
+
+#info {
+  padding: 60px 0 60px;
+  @include respond-to-screen-size-by-max($sm) {
+    padding: 0 0 60px;
+  }
+  
+  .row  {
+    @include respond-to-screen-size-by-max($lg) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+  }
+
+
+  .info_content {
+    margin-bottom: 60px;
+    @include respond-to-screen-size-by-max($lg) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .list-box {
+    padding-left: 4rem;
+    @include respond-to-screen-size-by-max(1200px) {
+      padding: 0;
+    }
+    .info_content{
+      background-color: $white-100;
+      // @include info_box_shadow ;
+      @include bevel_emboss_shadow; 
+      // @include new_shadow; 
+      border-radius: 50px;
+      padding: 4rem;
+      margin-bottom: 120px;
+      @include respond-to-screen-size-by-max($lg) {
+        padding: 3rem;
+        // box-shadow: none;
+        border-radius: 0;
+      }
+  
+      h2 {
+        @include respond-to-screen-size-by-max($sm) {
+          text-align: center !important;
+        }
+      }
+  
+      h4 {
+        font-family: "Geomanist Medium";
+      }
+      
+      p {margin-bottom: 30px !important;}
+  
+      ul {
+        margin: 30px 0;
+      }
+  
+      li {
+        margin-bottom: 20px;
+        padding-left: 20px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: '';
+          left: 0;
+          top: 8px;
+          width: 10px;
+          height: 10px;
+          border-radius: 3px;
+          background-color: $blue;
+        }
+      }
+      
+      p:last-of-type {
+        font-family: "Geomanist Medium";
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+#video {
+  margin-bottom: 120px;
+  background-color: $blue-100;
+
+  @include respond-to-screen-size-by-max($sm) {
+    background-color: transparent;
+  }
+
+  .row {
+    @include respond-to-screen-size-by-max($lg) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+  }
+
+  .row .col-12 {
+    padding: 0;
+  }
+}
+
+/****************************************** ABOUT US PAGE ******************************************/
+
+/****************************************** NAVIGATION BULLETS******************************************/
+
+/****************************************** NAVIGATION BULLETS******************************************/
+
